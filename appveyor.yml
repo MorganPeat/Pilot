@@ -1,0 +1,10 @@
+image: Visual Studio 2017
+configuration: Release
+before_build:
+  - dotnet restore
+build:
+  project: Pilot.sln
+cache:
+  - '%USERPROFILE%\.nuget\packages -> **\*.csproj'
+artifacts:
+  - path: src\Pilot.WebApi\bin
