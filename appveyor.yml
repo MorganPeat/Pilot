@@ -1,5 +1,6 @@
 image: Visual Studio 2017
 configuration: Release
+skip_tags: true
 before_build:
   - dotnet restore
 build:
@@ -8,3 +9,12 @@ cache:
   - '%USERPROFILE%\.nuget\packages -> **\*.csproj'
 artifacts:
   - path: src\Pilot.WebApi\bin
+deploy:
+  release: pilot-v$(appveyor_build_version)
+  provider: GitHub
+  auth_token:
+    secure: r/wxLjxr/UWdUoiZnoF6RglHndWSTuQnl8ruAC7O7+u/BX8Fi9ytVRq7ItMTDsVu
+  artifact: src\Pilot.WebApi\bin.zip
+  draft: false
+  prerelease: false
+  force_update: true
