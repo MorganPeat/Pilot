@@ -17,7 +17,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: r/wxLjxr/UWdUoiZnoF6RglHndWSTuQnl8ruAC7O7+u/BX8Fi9ytVRq7ItMTDsVu
-  artifact: src\Pilot.WebApi\Pilot.WebApi.zip
+  artifact: Pilot.WebApi.zip
   draft: false
   prerelease: false
   force_update: true
