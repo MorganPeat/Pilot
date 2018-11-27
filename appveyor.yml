@@ -5,10 +5,11 @@ before_build:
   - dotnet restore
 build:
   project: Pilot.sln
+  publish_wap_xcopy: true
 cache:
   - '%USERPROFILE%\.nuget\packages -> **\*.csproj'
 artifacts:
-  - path: src\Pilot.WebApi\bin
+  - path: src\Pilot.WebApi\bin\Release\Publish
     name: Pilot.WebApi
     type: zip
 deploy:
